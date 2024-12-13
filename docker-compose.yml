@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+    jeuxreact:
+        build:
+            context: "."
+            dockerfile: "./Dockerfile"
+        image: "jeuxreact"
+        container_name: "jeuxreact"
+        privileged: false
+        stdin_open: true
+        tty: true
+        ports:
+            - "80:1880"
+        networks:
+            - "network"
+
+networks:
+    network:
+        driver: "bridge"
+
